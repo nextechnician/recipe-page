@@ -1,0 +1,258 @@
+@layer reset, base, components, utilities;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  img {
+    max-inline-size: 100%;
+    display: block;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Young Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    /* colors */
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+
+    --stone-900: hsl(24, 5%, 18%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-100: hsl(30, 54%, 90%);
+
+    --brown-800: hsl(14, 45%, 36%);
+
+    --white: hsl(0, 0%, 100%);
+
+    /* font-families */
+    --ff-young: 'Young Serif', serif;
+    --ff-outfit: 'Outfit', sans-serif;
+
+    /* font scale */
+    --fs-preset-1: 2.5rem;
+    --fs-preset-2: 1.75rem;
+    --fs-preset-3: 1.25rem;
+    --fs-preset-4: 1rem;
+
+    /* line height */
+    --lh-1: 1;
+    --lh-2: 1.5;
+  }
+
+  header img {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: var(--ff-young);
+    font-weight: 400;
+    line-height: var(--lh-1);
+    font-size: var(--fs-preset-1);
+    margin: 2rem;
+    color: var(--stone-900);
+  }
+
+  h3 {
+    font-family: var(--ff-young);
+    font-size: var(--fs-preset-2);
+    font-weight: 400;
+    color: var(--brown-800);
+  }
+
+  p,
+  section {
+    font-family: var(--ff-outfit);
+    font-size: var(--fs-preset-4);
+    line-height: var(--lh-2);
+    font-weight: 400;
+    margin: 2rem;
+    color: var(--stone-600);
+  }
+
+  section p {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+
+@layer components {
+  .prep-time {
+    display: grid;
+    justify-content: start;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    background-color: var(--rose-50);
+    border-radius: 1rem;
+  }
+
+  .prep-time h2 {
+    font-size: var(--fs-preset-3);
+    color: var(--rose-800);
+  }
+
+  .prep-time ul li::marker {
+    color: var(--rose-800);
+  }
+
+  .prep-time li {
+    color: var(--stone-600);
+  }
+
+  .bold {
+    font-family: var(--ff-outfit);
+    font-size: var(--fs-preset-4);
+    font-weight: 700;
+  }
+
+  ul,
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  ul li,
+  ol li {
+    padding-left: 1rem;
+  }
+
+  ol li::marker,
+  ul li::marker {
+    color: var(--brown-800);
+  }
+
+  span {
+    color: var(--stone-600);
+  }
+
+  section:nth-child(3),
+  section:nth-child(4) {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--stone-150);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    text-align: start;
+    padding-left: 2rem;
+    font-weight: 400;
+  }
+
+  td {
+    text-align: left;
+    font-size: var(--fs-preset-4);
+    line-height: var(--lh-2);
+    font-weight: 700;
+    color: var(--brown-800);
+  }
+
+  th,
+  td {
+    padding: 0.75rem 2rem;
+  }
+
+  tr {
+    border-bottom: 1pt solid var(--stone-150);
+  }
+}
+
+@layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (min-width: 780px) {
+  html {
+    background-color: var(--stone-100);
+  }
+
+  body {
+    padding: 2rem;
+  }
+
+  .image-frame {
+    padding: 2rem;
+  }
+
+  img {
+    border-radius: 1rem;
+    object-fit: contain;
+    margin-bottom: 0;
+  }
+
+  article {
+    max-width: 700px;
+    margin-inline: auto;
+    background-color: var(--white);
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: calc(var(--fs-preset-1) * 1.1);
+  }
+
+  tr:last-of-type {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  article {
+    max-width: 1000px;
+  }
+}
