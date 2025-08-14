@@ -24,8 +24,7 @@ The goal was to create a simple and responsive recipe page using HTML and CSS, I
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://nextechnician.github.io/recipe-page/)
 
 ## My process
 
