@@ -70,5 +70,4 @@ Adding subtle animations for a more interactive feel.
 
 ## Author
 
-- Website - [Talay Yontem](https://www.your-site.com)
 - Frontend Mentor - [@nextechnician](https://www.frontendmentor.io/profile/nextechnician)
